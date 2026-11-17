@@ -8,7 +8,7 @@ Language-model agents are starting to bid in electricity markets, and none of th
 
 Bachelor thesis in Software Engineering · University of Southern Denmark
 
-Phongsakon Mark Konrad* and Tim Lukas Adam* (* equal contribution)
+[Phongsakon Mark Konrad](https://phomarkon.github.io/)* and [Tim Lukas Adam](https://timadam03.github.io/)* (* equal contribution)
 
 Supervised by Serkan Ayvaz, University of Southern Denmark, and Morten Borch, Danfoss A/S · Sønderborg, June 2026
 
