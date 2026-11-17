@@ -96,6 +96,8 @@ Finally, switch the bidder's mistakes off and on. They cost much less with the g
 
 The simulator above is a sketch. The dashboard we built for the thesis replays what really happened. It holds the curated runs that ship with the code, three full-day runs of the focal power-to-heat agent and 36 shorter runs from the matrix behind the appendix rationale examples.
 
+It opens on a Danish demo day. The prices are the DK1 and DK2 imbalance and mFRR prices that Energinet published for 6 March 2025, the day of the spike. The fourteen trading agents and four information desks on top of them are simulated. They stand for the kinds of asset that bid in Denmark, from offshore wind and combined heat and power to electric boilers, heat pumps, batteries and EV fleets, and every bid passes the same gate. The dashboard marks this run as a demo, and the stored runs sit next to it in the run list.
+
 Step through a run quarter by quarter. Open any agent to read its rationale, every tool call it made and what the gate said about each bid. It is an operator console and reads best on a wide screen.
 
 ## A forecast has to say how often it is wrong

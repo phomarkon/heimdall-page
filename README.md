@@ -6,4 +6,6 @@ This repository holds the built static page only. The code, data pipeline and ru
 
 The `app/` folder is a static build of the thesis operator dashboard from the code release, replaying the curated runs that ship with it. Its run data is the run-view API output for those runs, stored gzipped under `app/data/`. Saving specs and templates needs the local stack and is disabled here.
 
+The dashboard opens on a demo run, `dk-demo-2025-03-06-simulated-agents`. Its market data are Energinet's published DK1 and DK2 imbalance and mFRR prices for 6 March 2025 (Energi Data Service, dataset ImbalancePrice), with 4 and 5 March as calibration history. Its agents are simulated: an illustrative portfolio of Danish asset types bidding by simple rules, checked by the thesis gate on an online ACI interval and settled at the real marginal mFRR prices. It is not a thesis result.
+
 Every plotted value on the main page comes from the thesis or from the stored results in the code release. The gate figure on Sheet 02 is a labelled illustration, and the simulator runs the thesis calibrators and gate on an invented price stream. It is labelled as simulated and shows no thesis results.
