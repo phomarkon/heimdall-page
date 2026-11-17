@@ -9,11 +9,11 @@
 <meta property="og:description" content="A conformal gate keeps every accepted bid above the operator's loss limit, whoever proposes it.">
 <meta property="og:image" content="https://phomarkon.github.io/heimdall-page/dashboard.jpg">
 <link rel="alternate" type="text/markdown" href="index.md">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%231b1f24'/%3E%3Cpath d='M10 25V9M22 25V9M7 9h18' stroke='%23fff' stroke-width='2.6' fill='none'/%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%23dff5ec'/%3E%3Crect x='1' y='1' width='30' height='30' fill='none' stroke='%231f2933' stroke-width='2'/%3E%3Cpath d='M9 25V11h3v14zm11 0V11h3v14zM9 16h14v3H9z' fill='%230f766e'/%3E%3C/svg%3E">
 <script>(function(){try{var t=localStorage.getItem("heimdall-theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);}catch(e){}})();</script>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Martian+Mono:wght@400;500&family=Schibsted+Grotesk:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Spectral:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400&family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
 <style>
 :root{
   --bg:#ffffff; --paper:#f6f7f8; --ink:#1b1f24; --ink2:#3a414a; --muted:#5f6873; --hair:#d8dde3; --hair2:#eceff2;
@@ -195,6 +195,37 @@ footer p{max-width:680px}
 figure.shot{margin:0}
 figure.shot img{width:100%;height:auto;display:block;border-bottom:1px solid var(--hair)}
 
+/* site bar */
+html{scroll-padding-top:72px}
+@media (max-width:1359px){html{scroll-padding-top:104px}}
+.site{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--hair)}
+.site .row{max-width:1080px;margin:0 auto;padding:0 24px;display:flex;align-items:center;gap:6px;height:52px}
+.site .brand{display:flex;align-items:center;gap:8px;text-decoration:none;font-family:var(--serif);font-size:20px;font-weight:500;margin-right:14px;color:var(--ink)}
+.site .tabs{display:flex;gap:4px;align-items:center;flex:1;min-width:0}
+.site .tab{font-family:var(--mono);font-size:12px;letter-spacing:.02em;text-decoration:none;color:var(--ink2);padding:7px 12px;border:1px solid transparent;border-radius:3px;white-space:nowrap}
+.site .tab:hover{border-color:var(--hair)}
+.site .tab.on{background:var(--ink);color:var(--bg)}
+.site .tab.ext{border-color:var(--ink);color:var(--ink)}
+.site .tab.ext:hover{background:var(--ink);color:var(--bg)}
+.site .topbar{position:static;border-bottom:0;border-top:1px solid var(--hair2);padding:7px 24px}
+@media (max-width:600px){.site .row{padding:0 12px;gap:2px}.site .brand .nm{display:none}.site .brand{margin-right:6px}.site .tab{padding:6px 8px;font-size:11px}.site .topbar{padding:7px 12px}}
+@media (max-width:380px){.site .tab .full{display:none}}
+.rail{top:96px!important}
+/* launch cards */
+.launch{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:30px 0 8px}
+@media (max-width:760px){.launch{grid-template-columns:1fr}}
+.lcard{position:relative;display:grid;grid-template-rows:auto 1fr;border:1px solid var(--ink);background:var(--bg);text-decoration:none;color:var(--ink);transition:transform .15s,box-shadow .15s}
+.lcard:hover{transform:translate(-2px,-2px);box-shadow:4px 4px 0 var(--ink)}
+.lcard .pic{height:150px;overflow:hidden;border-bottom:1px solid var(--hair);background:var(--paper)}
+.lcard .pic img{width:100%;height:100%;object-fit:cover;object-position:left top;display:block}
+.lcard .pic svg{width:100%;height:100%;display:block}
+.lcard .body{padding:14px 16px 16px}
+.lcard .lk{font-family:var(--mono);font-size:11px;color:var(--muted);letter-spacing:.04em;text-transform:uppercase}
+.lcard .lt{font-family:var(--serif);font-size:24px;line-height:1.2;margin:4px 0 6px}
+.lcard .ls{font-size:14.5px;color:var(--ink2);line-height:1.5}
+.lcard .lgo{display:inline-block;margin-top:12px;font-family:var(--mono);font-size:12px;background:var(--ink);color:var(--bg);padding:7px 12px}
+.backtop{display:inline-block;margin:18px 0 0;font-family:var(--mono);font-size:12px;color:var(--muted);text-decoration:none;border:1px solid var(--hair);padding:6px 10px}
+.backtop:hover{color:var(--ink);border-color:var(--ink)}
 /* rail */
 .rail{display:none}
 @media (min-width:1360px){
@@ -209,15 +240,119 @@ figure.shot img{width:100%;height:auto;display:block;border-bottom:1px solid var
 .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 svg{touch-action:pan-y}
 @media (prefers-reduced-motion: reduce){*{transition:none!important}}
+
+/* ===== dashboard visual language ===== */
+:root{
+  --bg:#fbfaf7; --paper:#ffffff; --ink:#101217; --ink2:#1f2933; --muted:#5f6673; --hair:#cfd5dd; --hair2:#ebe9e3; --line:#1f2933;
+  --aci:#2B7BB9; --split:#8E4585; --bocpd:#D55E00; --accept:#0f766e; --llm:#8A5E33; --det:#101217; --target:#101217;
+  --accept-soft:#dff5ec; --tint:#e8f1f8; --grid:rgb(31 41 51 / .035);
+  --serif:"IBM Plex Sans",system-ui,sans-serif; --sans:"IBM Plex Sans",system-ui,sans-serif; --mono:"IBM Plex Mono",ui-monospace,monospace;
+}
+@media (prefers-color-scheme: dark){:root:not([data-theme="light"]){
+  --bg:#0e1116; --paper:#151a21; --ink:#eef1f4; --ink2:#d3d9e0; --muted:#97a1ad; --hair:#323b46; --hair2:#1b2129; --line:#c9d1d9;
+  --aci:#5AB0EA; --split:#D08CC4; --bocpd:#F0874A; --accept:#3cc7a8; --llm:#CFA06E; --det:#eef1f4; --target:#eef1f4;
+  --accept-soft:#12352f; --tint:#162430; --grid:rgb(201 209 217 / .03);}}
+:root[data-theme="dark"]{
+  --bg:#0e1116; --paper:#151a21; --ink:#eef1f4; --ink2:#d3d9e0; --muted:#97a1ad; --hair:#323b46; --hair2:#1b2129; --line:#c9d1d9;
+  --aci:#5AB0EA; --split:#D08CC4; --bocpd:#F0874A; --accept:#3cc7a8; --llm:#CFA06E; --det:#eef1f4; --target:#eef1f4;
+  --accept-soft:#12352f; --tint:#162430; --grid:rgb(201 209 217 / .03);}
+body{background-color:var(--bg);background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:18px 18px;font-size:16.5px}
+::selection{background:var(--accept-soft)}
+:focus-visible{outline:2px solid var(--accept);outline-offset:2px}
+/* header */
+h1{font-family:var(--mono);font-weight:700;text-transform:uppercase;letter-spacing:-.03em;font-size:60px;margin:22px 0 8px}
+.sub{font-family:var(--mono);font-style:normal;font-size:16px;line-height:1.5;color:var(--ink2);letter-spacing:.01em}
+.stand{font-size:18.5px}
+.kind,.meta{font-family:var(--mono);font-size:12px}
+.links{font-family:var(--mono);font-size:13px}
+@media (max-width:600px){h1{font-size:40px}.sub{font-size:14px}}
+.themebtn{font-family:var(--mono);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--line);border-radius:0;background:var(--paper);color:var(--ink);padding:7px 10px}
+.themebtn:hover{background:var(--accept-soft)}
+/* site bar (mirrors the dashboard header) */
+.site{background:var(--bg);border-bottom:2px solid var(--line)}
+.site .brand{font-family:var(--mono);font-weight:700;text-transform:uppercase;letter-spacing:-.02em;font-size:19px}
+.site .brand .ico{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border:1px solid var(--line);background:var(--accept-soft);color:var(--accept)}
+.site .tab{font-family:var(--mono);font-size:11.5px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;border:1px solid var(--line);border-radius:0;color:var(--ink);background:var(--paper)}
+.site .tab:hover{background:var(--accept-soft);border-color:var(--line)}
+.site .tab.on{background:var(--accept-soft);color:var(--accept);box-shadow:inset 0 -3px 0 var(--accept)}
+.site .tab.ext{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+.site .tab.ext:hover{background:var(--accept);border-color:var(--accept);color:#fff}
+.site .topbar{background:var(--bg);font-family:var(--mono);font-size:11.5px;letter-spacing:.04em;text-transform:uppercase;border-top:1px solid var(--line)}
+.topbar a.on{color:var(--accept)}
+.rail{font-family:var(--mono);font-size:11px;letter-spacing:.04em;text-transform:uppercase}
+.rail a{border-left-width:2px}
+.rail a.on{color:var(--accept)!important;border-left-color:var(--accept)!important}
+/* panels */
+.sheet-frame{border:2px solid var(--line);background:var(--paper);box-shadow:6px 6px 0 var(--line);margin:36px 0 22px}
+.sheet-frame::before,.sheet-frame::after{display:none}
+.tblock{border-bottom:2px solid var(--line);font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink2)}
+.tblock>div{border-right:1px solid var(--line);padding:9px 12px}
+.tblock>div:first-child{background:var(--accept-soft);color:var(--accept)}
+.tblock b{font-weight:700;color:inherit}
+.illus{font-weight:700;color:var(--bocpd)}
+.instr{font-family:var(--mono);font-size:12px;color:var(--muted)}
+.cap{font-style:normal;font-size:13.5px}
+.cap .fl{font-family:var(--mono);font-size:12px;text-transform:uppercase;letter-spacing:.04em;color:var(--ink)}
+svg text{font-family:var(--mono);font-size:11px}
+svg .mono{font-size:10.5px}
+/* controls */
+.btn{font-family:var(--mono);font-size:11.5px;font-weight:600;letter-spacing:.05em;text-transform:uppercase;color:var(--ink);background:var(--paper);border:1px solid var(--line);border-radius:0;padding:6px 11px}
+.btn:hover{background:var(--accept-soft);border-color:var(--line)}
+.btn[aria-pressed="true"]{background:var(--accept-soft);color:var(--accept);border-color:var(--line);box-shadow:inset 0 -3px 0 var(--accept)}
+.simbar .btn.play{background:var(--ink);color:var(--bg);border-color:var(--ink);box-shadow:none}
+.simbar .btn.play:hover{background:var(--accept);border-color:var(--accept);color:#fff}
+.plab{font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
+.readout{font-size:11.5px;gap:6px}
+.readout>span{border:1px solid var(--hair);background:var(--bg);padding:3px 8px}
+.readout b{font-weight:700}
+.simclock{border:1px solid var(--line);background:var(--accept-soft);color:var(--accept);padding:5px 9px;font-weight:600}
+.story{border-left:3px solid var(--accept);background:var(--bg);padding:10px 14px;font-size:15px}
+.tiles{border:1px solid var(--line);background:var(--line)}
+.tiles>div{background:var(--paper)}
+.tiles .k{font-size:10.5px;font-weight:700;letter-spacing:.08em}
+.tiles .v{font-weight:600}
+/* cards */
+.card,.lcard{border:2px solid var(--line);background:var(--paper);box-shadow:4px 4px 0 var(--line);transition:transform .12s,box-shadow .12s}
+.card:hover,.lcard:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--line)}
+.card .no{font-family:var(--mono);font-size:11px;font-weight:700;color:var(--accept);letter-spacing:.06em}
+.card .tt{font-family:var(--mono);font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:.02em}
+.lcard .pic{border-bottom:2px solid var(--line)}
+.lcard .lk{font-weight:700;color:var(--accept);letter-spacing:.08em}
+.lcard .lt{font-family:var(--mono);font-weight:700;font-size:20px;text-transform:uppercase;letter-spacing:-.01em}
+.lgo,.dash .go,.backtop{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;background:var(--accept-soft);color:var(--accept);border:1px solid var(--line);padding:9px 14px;text-decoration:none}
+.lcard:hover .lgo,.dash .go:hover,.backtop:hover{background:var(--accept);color:#fff;opacity:1}
+.dash img{border:1px solid var(--line)}
+/* text */
+h2{font-family:var(--mono);font-weight:700;font-size:26px;line-height:1.25;letter-spacing:-.02em}
+h3{font-family:var(--mono);font-weight:700;font-size:12px;letter-spacing:.08em;color:var(--ink2)}
+h3::before{content:"[ "}h3::after{content:" ]"}
+.sheethead{border-top:2px solid var(--line);padding-top:14px;align-items:center}
+.sheethead .no{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--accept);background:var(--accept-soft);border:1px solid var(--line);padding:4px 9px}
+.notes li::before{font-weight:700;color:var(--accept)}
+.abs p{font-family:var(--sans);font-size:17.5px}
+.abs .lead{font-family:var(--mono);font-weight:700;color:var(--accept);letter-spacing:.08em}
+.defs{border:2px solid var(--line);background:var(--paper);box-shadow:6px 6px 0 var(--line)}
+.dg{font-weight:700;letter-spacing:.08em;color:var(--accept);border-top:1px solid var(--line)}
+.thm{border:1px solid var(--line);border-left:4px solid var(--accept);background:var(--paper);padding:10px 14px}
+.thm .nm{font-weight:700;color:var(--accept);letter-spacing:.08em}
+.thm p{font-family:var(--sans);font-size:16.5px}
+i.m,span.m{font-family:"IBM Plex Sans",serif}
+.scope h4{font-weight:700;letter-spacing:.08em;color:var(--accept)}
+pre.bib{border:1px solid var(--line);background:var(--paper)}
+.pair>div{border:1px solid var(--line);background:var(--paper)}
+.pair blockquote{font-family:var(--sans);font-size:15px}
+.score li{border-bottom-color:var(--hair)}
+footer{border-top:2px solid var(--line);font-family:var(--mono);font-size:12.5px}
+i.m,.m{text-transform:none}
 </style>
 </head>
 <body>
-<nav class="topbar" aria-label="Contents"><a href="#summary">Summary</a><a href="#sim">Simulator</a><a href="#dashboard">Dashboard</a><a href="#s1">01 Forecasts</a><a href="#s2">02 The gate</a><a href="#s3">03 The break</a><a href="#s4">04 The floor</a><a href="#s5">05 The model</a><a href="#scope">Scope</a><a href="#cite">Cite</a></nav>
+<header class="site" id="site"><div class="row"><a class="brand" href="#top"><span class="ico"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4.9 16.1C1 12.2 1 5.8 4.9 1.9"/><path d="M7.8 4.7a6.14 6.14 0 0 0-.8 7.5"/><circle cx="12" cy="9" r="2"/><path d="M16.2 4.8c2 2 2.26 5.11.8 7.47"/><path d="M19.1 1.9a9.96 9.96 0 0 1 0 14.1"/><path d="M9.5 18h5"/><path d="m8 22 4-11 4 11"/></svg></span><span class="nm">Heimdall</span></a><nav class="tabs" aria-label="Sections of the project"><a class="tab" data-tab="thesis" href="#top">Thesis</a><a class="tab" data-tab="sim" href="#sim">Simulator</a><a class="tab ext" href="app/">Dashboard<span class="full"> ↗</span></a></nav><button class="themebtn" id="themebtn" type="button" aria-label="Toggle light or dark theme">Dark</button></div><nav class="topbar" aria-label="Contents"><a href="#summary">Summary</a><a href="#sim">Simulator</a><a href="#dashboard">Dashboard</a><a href="#s1">01 Forecasts</a><a href="#s2">02 The gate</a><a href="#s3">03 The break</a><a href="#s4">04 The floor</a><a href="#s5">05 The model</a><a href="#scope">Scope</a><a href="#cite">Cite</a></nav></header>
 <nav class="rail" aria-label="Contents"><a href="#top">Top</a><a href="#summary">Summary</a><a href="#anatomy">The path of a bid</a><a href="#defs">Definitions</a><a href="#sim">Simulator</a><a href="#dashboard">Dashboard</a><a href="#s1">01 Forecasts</a><a href="#s2">02 The gate</a><a href="#s3">03 The break</a><a href="#s4">04 The floor</a><a href="#s5">05 The model</a><a href="#scope">Scope</a><a href="#cite">Cite</a></nav>
 
 <div class="wrap">
 <header class="top" id="top">
-  <div class="toprow"><span><a href="https://phomarkon.github.io/" style="text-decoration:none">← phomarkon.github.io</a></span><button class="themebtn" id="themebtn" type="button" aria-label="Toggle light or dark theme">Dark</button></div>
+  <div class="toprow"><span><a href="https://phomarkon.github.io/" style="text-decoration:none">← phomarkon.github.io</a></span></div>
   <h1>Heimdall</h1>
   <p class="sub">Only the safe shall pass. A conformal verifier between autonomous bidders and the Nordic electricity balancing market</p>
   <p class="stand">Language-model agents are starting to bid in electricity markets, and none of them can say how often they are wrong. We put a small conformal gate between the bidders and the market. The gate keeps every accepted bid above the operator's loss limit at the coverage the operator asked for, whether or not the model reasoned correctly.</p>
@@ -226,6 +361,21 @@ svg{touch-action:pan-y}
   <p class="meta">Supervised by Serkan Ayvaz, University of Southern Denmark, and Morten Borch, Danfoss A/S · Sønderborg, June 2026</p>
   <p class="links"><a href="#sim">Simulator</a><span class="sep">·</span><a href="app/">Dashboard ↗</a><span class="sep">·</span><a href="index.md">Markdown version</a><span class="sep">·</span><a href="https://github.com/phomarkon/heimdall-src" rel="external noopener">Code ↗</a><span class="sep">·</span><a href="https://huggingface.co/Phongsakon/heimdall" rel="external noopener">Weights ↗</a><span class="sep">·</span><a href="#cite">Cite this thesis</a></p>
 </header>
+
+<div class="launch" id="launch">
+  <a class="lcard" href="#sim">
+    <div class="pic"><svg id="lsim" viewBox="0 0 480 150" preserveAspectRatio="none" aria-hidden="true"></svg></div>
+    <div class="body"><div class="lk">Simulator · simulated data</div><div class="lt">Run a market day through the gate</div>
+    <div class="ls">Pick a calibrator, a loss limit and a careless bidder, then watch which bids the gate lets through, quarter by quarter.</div>
+    <span class="lgo">Try the simulator ↓</span></div>
+  </a>
+  <a class="lcard" href="app/">
+    <div class="pic"><img src="app-shot.jpg" alt="" width="1600" height="1000"></div>
+    <div class="body"><div class="lk">Dashboard · stored runs</div><div class="lt">Replay the real runs</div>
+    <div class="ls">The thesis operator console in your browser. Step through 39 stored runs and open every rationale, tool call and verdict.</div>
+    <span class="lgo">Open the dashboard ↗</span></div>
+  </a>
+</div>
 
 <!-- HERO -->
 <div class="sheet-frame" id="hero">
@@ -330,6 +480,7 @@ svg{touch-action:pan-y}
 <p>Three things to notice. With the rule change switched on, the fixed split interval keeps the width it learned on the calm first day. Misses pile up, and accepted bids end below <i class="m">τ</i> several times as often as under online calibration. ACI widens after each miss, and the gate grows more cautious on its own. The faster step size catches up within hours, and the slower one lags well behind it.</p>
 <p>Second, compare the two counts of bids below <i class="m">τ</i>. Without the gate a large share of all bids ends below the limit. With online calibration the share stays near or under <i class="m">α</i>, which is what Theorem 1b promises in the long run. That safety costs profit. The gate turns down bids that would have paid, and over three days its profit line usually ends below the line without it.</p>
 <p>Finally, switch the bidder's mistakes off and on. They cost much less with the gate in place, because the gate never asks why a bid was proposed. It only checks what the bid would earn at the worst price it has to plan for. That is why the thesis can put a language model behind it.</p>
+<a class="backtop" href="#top">↑ Back to the top</a>
 
 <!-- DASHBOARD -->
 <div class="sheethead" id="dashboard"><span class="no">Dashboard</span><h2>Replay the real runs in the operator dashboard</h2></div>
@@ -675,7 +826,7 @@ btn(bar,"New random day",false,()=>{S.seed=(S.seed*48271)%2147483647;S.t=Q;S.hov
 const spB=SPEEDS.map((v,k)=>btn(bar,v+"×",k===S.speed,()=>{S.speed=k;spB.forEach((b,j)=>b.setAttribute("aria-pressed",j===k?"true":"false"));if(S.play)tick0();}));
 const clock=document.createElement("span");clock.className="simclock";bar.appendChild(clock);
 const kn=$("#sim-knobs");const groups={};
-function knob(key,label,opts){const d=document.createElement("div");d.className="ctrls";const l=document.createElement("span");l.className="plab";l.textContent=label;d.appendChild(l);kn.appendChild(d);
+function knob(key,label,opts){const d=document.createElement("div");d.className="ctrls";const l=document.createElement("span");l.className="plab";l.innerHTML=label.replace(/([γατ])$/,'<i class="m">$1</i>');d.appendChild(l);kn.appendChild(d);
   groups[key]=opts.map((o,k)=>btn(d,o,k===S[key],()=>{if(groups[key][k].disabled)return;set(key,k);}));}
 function set(key,k){S[key]=k;groups[key].forEach((b,j)=>b.setAttribute("aria-pressed",j===k?"true":"false"));syncG();run();draw();}
 function syncG(){groups.gam.forEach(b=>{b.disabled=S.cal===0;});}
@@ -771,6 +922,18 @@ function tiles(T){const st=stats(T);const n=Math.max(1,st.n);
   $("#sim-tiles").innerHTML=c.map(x=>"<div><div class='k'>"+x[0]+"</div><div class='v'>"+x[1]+"</div><div class='s'>"+x[2]+"</div></div>").join("");}
 run();reg(draw);
 })();
+/* ---------- launch thumbnail (illustration) ---------- */
+(function(){const s=document.getElementById("lsim");if(!s)return;
+ const n=120,X=i=>i/(n-1)*480,Y=v=>75-v*1.0;let up="",dn="",pl="";const pr=[];
+ for(let i=0;i<n;i++){const v=18*Math.sin(i/9)+10*Math.sin(i/3.7)+(i===40?55:0)+(i===88?-40:0);pr.push(v);}
+ for(let i=0;i<n;i++){const w=14+(i>60?10:0);up+=(i?"L":"M")+X(i)+" "+Y(pr[i]*0.6+w);}
+ for(let i=n-1;i>=0;i--){const w=14+(i>60?10:0);dn+="L"+X(i)+" "+Y(pr[i]*0.6-w);}
+ el("path",{d:up+dn+"Z",fill:"var(--aci)","fill-opacity":0.18},s);
+ for(let i=0;i<n;i++)pl+=(i?"L":"M")+X(i)+" "+Y(pr[i]);
+ el("path",{d:pl,fill:"none",stroke:"var(--ink)","stroke-width":1.3},s);
+ el("line",{x1:0,x2:480,y1:Y(4),y2:Y(4),stroke:"var(--llm)","stroke-dasharray":"5 4"},s);
+ for(let i=0;i<n;i+=2){const ok=(i*7)%5!==0;el("rect",{x:X(i),y:128,width:3,height:12,fill:ok?"var(--accept)":"var(--hair)"},s);}
+})();
 /* ---------- CARDS ---------- */
 (function(){const host=$("#cards");const items=[["s1","01","Forecasts","Ten models, one coverage promise"],["s2","02","The gate","Profit checked at one endpoint"],["s3","03","The break","Coverage through the rule change"],["s4","04","The floor","Zero losses on accepted fills"],["s5","05","The model","Auditable, not more profitable"]];
 items.forEach((it,k)=>{const a=document.createElement("a");a.className="card";a.href="#"+it[0];a.innerHTML='<div class="no">'+it[1]+'</div><div class="tt">'+it[2]+'</div><div class="st">'+it[3]+'</div>';const sv=el("svg",{viewBox:"0 0 160 46",preserveAspectRatio:"none","aria-hidden":"true"},a);thumb(k,sv);host.appendChild(a);});
@@ -848,7 +1011,7 @@ function drawGate(){const host=$("#gate-plot");if(!host)return;const W=Math.max(
   el("line",{x1:m.l,x2:W-m.r,y1:H-m.b,y2:H-m.b,stroke:"var(--hair)"},s);el("line",{x1:m.l,x2:m.l,y1:m.t,y2:H-m.b,stroke:"var(--hair)"},s);
   txt(s,W-m.r,H-m.b+22,"clearing price →",{"text-anchor":"end"});txt(s,m.l+6,m.t+4,"profit of the bid",{});
   const band=el("rect",{x:X(G.lo),y:m.t,width:X(G.hi)-X(G.lo),height:ih,fill:"var(--tint)",stroke:"var(--aci)","stroke-width":1,style:"cursor:grab"},s);
-  txt(s,(X(G.lo)+X(G.hi))/2,m.t+16,"interval",{"text-anchor":"middle",class:"lbl"});
+  txt(s,(X(G.lo)+X(G.hi))/2,m.t+(narrow()?36:16),"interval",{"text-anchor":"middle",class:"lbl"});
   const pts=[0,1].map(v=>X(v)+" "+Y(Math.max(-0.05,Math.min(1.05,prof(v)))));
   el("path",{d:"M"+pts[0]+" L"+pts[1],stroke:"var(--ink2)","stroke-width":1.4,fill:"none"},s);
   const tl=el("line",{x1:m.l,x2:W-m.r,y1:Y(G.tau),y2:Y(G.tau),stroke:"var(--ink)","stroke-dasharray":"4 3","stroke-width":1.2},s);
@@ -957,8 +1120,8 @@ $("#copybib").addEventListener("click",()=>{const t=$("#bib").textContent;const 
 
 (function(){const a=$("#dlbib");a.href="data:application/x-bibtex;charset=utf-8,"+encodeURIComponent($("#bib").textContent);})();
 /* ---------- rail ---------- */
-(function(){const ids=["top","summary","anatomy","defs","s1","s2","s3","s4","s5","scope","cite"];const links=[...document.querySelectorAll(".rail a,.topbar a")];
- function on(){let cur="top";const y=window.scrollY+140;ids.forEach(id=>{const e=document.getElementById(id);if(e&&e.getBoundingClientRect().top+window.scrollY<=y)cur=id;});links.forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#"+cur));}
+(function(){const ids=["top","summary","anatomy","defs","sim","dashboard","s1","s2","s3","s4","s5","scope","cite"];const links=[...document.querySelectorAll(".rail a,.topbar a")];
+ function on(){let cur="top";const y=window.scrollY+140;ids.forEach(id=>{const e=document.getElementById(id);if(e&&e.getBoundingClientRect().top+window.scrollY<=y)cur=id;});links.forEach(a=>a.classList.toggle("on",a.getAttribute("href")==="#"+cur));document.querySelectorAll(".site .tab[data-tab]").forEach(a=>a.classList.toggle("on",a.dataset.tab===(cur==="sim"?"sim":"thesis")));}
  window.addEventListener("scroll",on,{passive:true});on();})();
 })();
 </script>
