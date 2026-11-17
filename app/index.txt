@@ -1,0 +1,23 @@
+1:"$Sreact.fragment"
+2:I[3629,["484","static/chunks/484-aa8e5f3af9c89e79.js","177","static/chunks/app/layout-bdaf5a4f9623e0a5.js"],"Providers"]
+3:I[9766,[],""]
+4:I[8924,[],""]
+5:I[2619,["345","static/chunks/app/not-found-7afb3ae3f3845b93.js"],""]
+6:I[5068,["484","static/chunks/484-aa8e5f3af9c89e79.js","473","static/chunks/473-5697c9519de6d9f7.js","974","static/chunks/app/page-33d2d795c1584544.js"],"AppShell"]
+7:I[4431,[],"OutletBoundary"]
+9:I[5278,[],"AsyncMetadataOutlet"]
+b:I[4431,[],"ViewportBoundary"]
+d:I[4431,[],"MetadataBoundary"]
+e:"$Sreact.suspense"
+10:I[7150,[],""]
+:HL["/heimdall-page/app/_next/static/media/af5dd2b5d3f396f3-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/heimdall-page/app/_next/static/media/cdec7fa3927eb560-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/heimdall-page/app/_next/static/media/d9a2293b6b8212a5-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/heimdall-page/app/_next/static/media/fe486b1aba70499c-s.p.woff2","font",{"crossOrigin":"","type":"font/woff2"}]
+:HL["/heimdall-page/app/_next/static/css/7a2e074fe088f428.css","style"]
+0:{"P":null,"b":"Vj_W1UX1ZVobdnmgx6xUd","p":"/heimdall-page/app","c":["",""],"i":false,"f":[[["",{"children":["__PAGE__",{}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/heimdall-page/app/_next/static/css/7a2e074fe088f428.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"en","className":"__variable_e646fc","children":["$","body",null,{"children":["$","$L2",null,{"children":["$","$L3",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L4",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","main",null,{"className":"flex min-h-screen items-center justify-center bg-[#f4f7fb] px-6 text-slate-900","children":["$","section",null,{"className":"max-w-md rounded-md border border-[#d8e2ec] bg-white p-6 shadow-sm","children":[["$","p",null,{"className":"text-xs uppercase tracking-[0.18em] text-slate-500","children":"Heimdall"}],["$","h1",null,{"className":"mt-2 text-xl font-semibold","children":"View not found"}],["$","p",null,{"className":"mt-2 text-sm leading-6 text-slate-600","children":"This MVP currently exposes the operator dashboard as the single primary view."}],["$","$L5",null,{"href":"/","className":"mt-4 inline-flex rounded-md border border-teal-200 bg-teal-50 px-3 py-2 text-sm font-medium text-teal-700 transition hover:border-teal-300","children":"Return to dashboard"}]]}]}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}]}]}]]}],{"children":["__PAGE__",["$","$1","c",{"children":[["$","$L6",null,{}],null,["$","$L7",null,{"children":["$L8",["$","$L9",null,{"promise":"$@a"}]]}]]}],{},null,false]},null,false],["$","$1","h",{"children":[null,[["$","$Lb",null,{"children":"$Lc"}],["$","meta",null,{"name":"next-size-adjust","content":""}]],["$","$Ld",null,{"children":["$","div",null,{"hidden":true,"children":["$","$e",null,{"fallback":null,"children":"$Lf"}]}]}]]}],false]],"m":"$undefined","G":["$10",[]],"s":false,"S":true}
+c:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+8:null
+11:I[622,[],"IconMark"]
+a:{"metadata":[["$","title","0",{"children":"Heimdall Operator Dashboard"}],["$","meta","1",{"name":"description","content":"Replay of the stored Heimdall society runs: a verifier-guarded LLM bidder in the Nordic mFRR market."}],["$","link","2",{"rel":"icon","href":"/heimdall-page/app/icon.svg?1e39a4543f402208","type":"image/svg+xml","sizes":"any"}],["$","$L11","3",{}]],"error":null,"digest":"$undefined"}
+f:"$a:metadata"

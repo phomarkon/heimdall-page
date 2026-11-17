@@ -12,7 +12,7 @@ Bachelor thesis in Software Engineering · University of Southern Denmark
 
 Supervised by Serkan Ayvaz, University of Southern Denmark, and Morten Borch, Danfoss A/S · Sønderborg, June 2026
 
-[Markdown version](index.md) · [Code](https://github.com/phomarkon/heimdall-src) · [Weights](https://huggingface.co/Phongsakon/heimdall) · Cite this thesis
+Simulator·[Dashboard](app/) · [Markdown version](index.md) · [Code](https://github.com/phomarkon/heimdall-src) · [Weights](https://huggingface.co/Phongsakon/heimdall) · Cite this thesis
 
 Point at any day after the rule change. Press a calibrator to hide or show it.
 
@@ -75,6 +75,28 @@ Three results would have refuted the thesis. The interval could have lost its co
 **The gate.** The two-stage verifier. It rejects a bid that is physically infeasible for the asset, and then any bid whose worst-case profit is below the operator's threshold *τ*.
 
 **Proposer.** Whatever suggests the bid. In the thesis that is a deterministic chooser, a single language-model agent, or a society of language-model agents with personas.
+
+## Run a market day through the gate yourself
+
+Before the real results, here is the whole loop in miniature. A forecaster predicts the next quarter's price and a calibrator puts an interval around it. A bidder proposes a bid, and the gate checks the bid's profit at the worst end of the interval. Then the true price arrives and the calibrator learns from it. Press play and watch the quarters go by. Then change one setting at a time and see which part of the system is doing the work.
+
+Everything in this box is simulated. The price stream is invented and only shaped like the Danish one, and the bidder is a simple rule standing in for a language model. The calibrators and the gate run the same rules as in the thesis. None of the numbers here are thesis results. Those start at Sheet 01.
+
+Press play, or point at any quarter that has passed to read what happened in it.
+
+Simulator. **Simulated data, not a result.** The first day only calibrates and places no bids. The top panel shows the price with the 1 − *α* interval around the forecast, and the dashed line is what the heat is worth to the asset. Prices above the panel are drawn as arrows. The middle lane marks each quarter's bid as accepted, rejected, or accepted and then below *τ*. The bottom panel adds up profit with the gate and without it, when every proposal is placed. Every accepted bid is settled at the realised price here, while the real market activates only some bids, and the physical first stage of the gate is left out.
+
+Three things to notice. With the rule change switched on, the fixed split interval keeps the width it learned on the calm first day. Misses pile up, and accepted bids end below *τ* several times as often as under online calibration. ACI widens after each miss, and the gate grows more cautious on its own. The faster step size catches up within hours, and the slower one lags well behind it.
+
+Second, compare the two counts of bids below *τ*. Without the gate a large share of all bids ends below the limit. With online calibration the share stays near or under *α*, which is what Theorem 1b promises in the long run. That safety costs profit. The gate turns down bids that would have paid, and over three days its profit line usually ends below the line without it.
+
+Finally, switch the bidder's mistakes off and on. They cost much less with the gate in place, because the gate never asks why a bid was proposed. It only checks what the bid would earn at the worst price it has to plan for. That is why the thesis can put a language model behind it.
+
+## Replay the real runs in the operator dashboard
+
+The simulator above is a sketch. The dashboard we built for the thesis replays what really happened. It holds the curated runs that ship with the code, three full-day runs of the focal power-to-heat agent and 36 shorter runs from the matrix behind the appendix rationale examples.
+
+Step through a run quarter by quarter. Open any agent to read its rationale, every tool call it made and what the gate said about each bid.
 
 ## A forecast has to say how often it is wrong
 
@@ -148,7 +170,7 @@ Figure 9. Each square is one bid. Filled squares were accepted, outlined squares
 
 Behind the gate we put three kinds of proposer. A deterministic chooser takes the best-ranked candidate bid that the simulator and the gate accept. A single language model, Qwen3-32B served locally, sees the same candidates through narrow tools and picks one, or marks the quarter to watch, or abstains. A society runs six to twenty such agents with personas for a power-to-heat unit, wind, other renewables, a conventional generator, a retailer and an EV aggregator, joined in larger societies by information agents that only advise. Every tool call, rationale and verdict is written to a trace.
 
-Figure 10. Figure 1 of the thesis. The operator dashboard replays one DK1 trading day of the gated society. Nodes are agents coloured by archetype, edges are the links along which they exchange candidate bids, and every accepted and rejected bid can be opened from this one surface.
+Figure 10. Figure 1 of the thesis. The operator dashboard replays one DK1 trading day of the gated society. Nodes are agents coloured by archetype, edges are the links along which they exchange candidate bids, and every accepted and rejected bid can be opened from this one surface. The dashboard section above opens it in the browser.
 
 On profit the deterministic chooser wins every window. The reason is structural, and the thesis calls it the selector trap. Candidates arrive ranked by profit and filtered by the gate, so the best any selector can do is take the top entry, which the deterministic rule always does. Any other pick costs money. On the two stress windows the language model matched the chooser's focal power-to-heat profit to the euro and earned less in total. Averaged over three seeds, the retrieval-augmented society lands within 1 to 3% of the chooser.
 

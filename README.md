@@ -4,4 +4,6 @@ Project page for "Heimdall: Only the Safe Shall Pass. A Conformal Verifier Betwe
 
 This repository holds the built static page only. The code, data pipeline and run configurations are at https://github.com/phomarkon/heimdall-src, and the forecaster checkpoints are at https://huggingface.co/Phongsakon/heimdall.
 
-Every plotted value comes from the thesis or from the stored results in the code release. The gate figure on Sheet 02 is a labelled illustration.
+The `app/` folder is a static build of the thesis operator dashboard from the code release, replaying the curated runs that ship with it. Its run data is the run-view API output for those runs, stored gzipped under `app/data/`. Saving specs and templates needs the local stack and is disabled here.
+
+Every plotted value on the main page comes from the thesis or from the stored results in the code release. The gate figure on Sheet 02 is a labelled illustration, and the simulator runs the thesis calibrators and gate on an invented price stream. It is labelled as simulated and shows no thesis results.
