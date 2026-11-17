@@ -96,7 +96,7 @@ Finally, switch the bidder's mistakes off and on. They cost much less with the g
 
 The simulator above is a sketch. The dashboard we built for the thesis replays what really happened. It holds the curated runs that ship with the code, three full-day runs of the focal power-to-heat agent and 36 shorter runs from the matrix behind the appendix rationale examples.
 
-Step through a run quarter by quarter. Open any agent to read its rationale, every tool call it made and what the gate said about each bid.
+Step through a run quarter by quarter. Open any agent to read its rationale, every tool call it made and what the gate said about each bid. It is an operator console and reads best on a wide screen.
 
 ## A forecast has to say how often it is wrong
 
